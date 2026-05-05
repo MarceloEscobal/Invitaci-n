@@ -374,3 +374,53 @@ body {
     font-size: 0.9rem;
     margin-bottom: 20px;
 }
+
+/* Ajustes Específicos para Celular */
+@media (max-width: 768px) {
+    /* Reemplazar imágenes por versiones sin fondo */
+    .main-illustration {
+        content: url('assets/header_bear_transparent.png');
+    }
+    .footer-illustration {
+        content: url('assets/footer_bear_transparent.png');
+    }
+
+    /* Hacer textos más gruesos y legibles */
+    .parents-name {
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,1);
+    }
+    .invite-text {
+        font-weight: 600;
+        color: #4A5A6E;
+    }
+    .baby-name {
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,1);
+    }
+    .section-title {
+        font-weight: 600;
+        text-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,1);
+    }
+    .happy-text {
+        font-weight: 600;
+        color: #4A5A6E;
+    }
+    .date-time-box .month,
+    .date-time-box .time-part {
+        font-weight: 700;
+    }
+    .date-time-box .day {
+        font-weight: 600;
+    }
+    .location-box h4,
+    .location-box p {
+        font-weight: 600;
+        color: #4A5A6E;
+    }
+    .closing-text,
+    .closing-sub {
+        font-weight: 600;
+        color: #4A5A6E;
+    }
+}

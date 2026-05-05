@@ -377,7 +377,15 @@ body {
 
 /* Ajustes Específicos para Celular */
 @media (max-width: 768px) {
-    /* Quitar el fondo del contenedor en móviles para que mix-blend-mode funcione perfecto en iOS */
+    /* Reemplazar imágenes por versiones sin fondo en celulares */
+    .main-illustration {
+        content: url('assets/header_bear_transparent.png');
+    }
+    .footer-illustration {
+        content: url('assets/footer_bear_transparent.png');
+    }
+
+    /* Quitar el fondo del contenedor en móviles para un aspecto más limpio */
     .invitation-container {
         background-color: transparent !important;
         box-shadow: none !important;

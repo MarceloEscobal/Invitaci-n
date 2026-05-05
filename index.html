@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+    <!-- Overlay de Bienvenida para Autoplay -->
+    <div id="welcome-overlay" class="welcome-overlay">
+        <div class="welcome-content">
+            <h2 class="parents-name" style="text-shadow: none; font-size: 3rem; color: #6495ED;">Baby Shower</h2>
+            <p class="invite-text" style="color: #6495ED; font-weight: 600;">DE NUESTRO BEBÉ</p>
+            <button id="open-invitation-btn" class="action-btn map-btn" style="margin-top: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: auto; padding: 15px 30px;">
+                <i class="fas fa-envelope-open-text"></i> ABRIR INVITACIÓN
+            </button>
+        </div>
+    </div>
+
+    <div class="invitation-container" style="opacity: 0; pointer-events: none; transition: opacity 1.5s ease; height: 100vh; overflow: hidden;" id="main-content">
+        <!-- Música -->
+        <audio id="bg-music" loop>
+            <source src="assets/cancion.mp3" type="audio/mpeg">
+        </audio>
+        
+        <button id="music-btn" class="music-btn">
+            <i class="fas fa-play"></i>
+        </button>
+
+        <!-- Sección 1: Encabezado -->
+        <section class="section header-section fade-in">
+            <img src="assets/header_bear_1777952956865.png" alt="Baby Bear" class="main-illustration">
+            <h2 class="parents-name">Cesar y Keissy</h2>
+            <p class="invite-text">TE INVITAN AL BABY SHOWER DE</p>
+            <h1 class="baby-name">Nuestro Bebé</h1>
+        </section>
+
+        <!-- Sección 2: Cuenta Regresiva -->
+        <section class="section countdown-section fade-in">
+            <h3 class="section-title">Falta muy poco...</h3>
+            <div class="countdown" id="countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <p>Días</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <p>Minutos</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Detalles del Evento -->
+        <section class="section details-section fade-in">
+            <p class="happy-text">Estamos muy felices de compartir este momento tan importante con ustedes.</p>
+            
+            <div class="date-time-box">
+                <div class="date-part">
+                    <span class="month">MAYO</span>
+                    <span class="day">17</span>
+                </div>
+                <div class="time-part">
+                    <span>12:30 P.M.</span>
+                </div>
+            </div>
+
+            <div class="location-box">
+                <h4>LUGAR:</h4>
+                <p>535 Los Rubies - Trujillo</p>
+            </div>
+        </section>
+
+        <!-- Sección 4: Botones de Acción -->
+        <section class="section action-section fade-in">
+            <a href="https://maps.app.goo.gl/igesJasd6Wow3iFC6" target="_blank" class="action-btn map-btn">
+                <i class="fas fa-map-marker-alt"></i> VER UBICACIÓN
+            </a>
+            
+            <a href="https://wa.me/51942213157?text=¡Hola%20Keissy!%20Confirmo%20mi%20asistencia%20al%20Baby%20Shower." target="_blank" class="action-btn rsvp-btn">
+                <i class="fab fa-whatsapp"></i> CONFIRMA TU ASISTENCIA
+            </a>
+            
+            <button class="action-btn gift-btn" id="gift-modal-btn">
+                <i class="fas fa-gift"></i> MESA DE REGALOS
+            </button>
+        </section>
+
+        <!-- Modal de Mesa de Regalos -->
+        <div id="gift-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Mesa de Regalos</h3>
+                <i class="fas fa-envelope-open-text fa-3x" style="color: #6495ED; margin: 15px 0;"></i>
+                <p>El mejor regalo es tu presencia. Sin embargo, si deseas tener un detalle con nosotros, contaremos con un <strong>Buzón de Sobres</strong> el día del evento.</p>
+                <p>¡Gracias por tu amor y cariño!</p>
+            </div>
+        </div>
+
+        <!-- Sección 5: Despedida -->
+        <section class="section footer-section fade-in">
+            <p class="closing-text">¡Pronto habrá una nueva sonrisa iluminando nuestras vidas!</p>
+            <p class="closing-sub">¡Acompáñanos a la primera fiesta que haremos en su honor!</p>
+            <h2 class="parents-name">¡Te esperamos!</h2>
+            <img src="assets/footer_bear_1777952975984.png" alt="Sleeping Bear" class="footer-illustration">
+        </section>
+    </div>
+
+    <script src="script.js?v=2"></script>
+</body>
+</html>

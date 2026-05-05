@@ -1,0 +1,376 @@
+/* Variables de Color y Fuentes */
+:root {
+    --primary-blue: #A9D0F5; /* Azul cielo suave */
+    --secondary-blue: #D6EAF8; /* Azul muy claro */
+    --gold: #D4AF37; /* Dorado suave */
+    --text-dark: #5D6D7E; /* Gris azulado para textos legibles */
+    --white: #FFFFFF;
+    --font-title: 'Great Vibes', cursive;
+    --font-text: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pantalla de Bienvenida */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/background_pattern3.jpg');
+    background-size: 150px;
+    background-repeat: repeat;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.welcome-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 90%;
+    animation: modalPop 0.5s ease-out;
+}
+
+body {
+    background-image: url('assets/background_pattern3.jpg');
+    background-size: 150px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: top left;
+    font-family: var(--font-text);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Glow para textos sobre el fondo ocupado */
+.parents-name, .invite-text, .baby-name, .section-title, .happy-text, .date-part, .time-part, .location-box, .closing-text, .closing-sub {
+    text-shadow: 0 0 8px rgba(255,255,255,1), 0 0 15px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,0.8);
+}
+
+/* Contenedor principal estilo móvil */
+.invitation-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.45); /* Más transparente (opaco en términos del usuario) */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+
+/* Secciones y Transiciones */
+.section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botón de Música */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--gold);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.3s ease, background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulseMusic 2s infinite;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulseMusic {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* Imágenes */
+.main-illustration, .footer-illustration {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    mix-blend-mode: multiply; /* Para quitar fondo blanco si lo tiene */
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Tipografía */
+.parents-name {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.invite-text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.baby-name {
+    font-family: var(--font-title);
+    font-size: 4rem;
+    color: #6495ED; /* CornflowerBlue para destacar */
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Cuenta Regresiva */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 10px;
+    border-radius: 15px;
+    min-width: 70px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.time-box span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #6495ED;
+}
+
+.time-box p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    color: var(--text-dark);
+}
+
+/* Detalles */
+.happy-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.date-time-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.date-part, .time-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.month {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.day {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #6495ED;
+    line-height: 1;
+}
+
+.time-part {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--gold);
+}
+
+.location-box h4 {
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.location-box p {
+    font-size: 1.1rem;
+}
+
+/* Botones de Acción */
+.action-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    max-width: 300px;
+    padding: 15px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.map-btn {
+    background-color: var(--gold);
+    color: white;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.map-btn:hover {
+    background-color: #bfa035;
+    transform: translateY(-2px);
+}
+
+.rsvp-btn {
+    background-color: #25D366; /* WhatsApp verde */
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.rsvp-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+.gift-btn {
+    background-color: white;
+    color: #6495ED;
+    border: 2px solid #6495ED;
+}
+
+.gift-btn:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-2px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 30vh auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: modalPop 0.3s ease-out;
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--text-dark);
+}
+
+.modal-content h3 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* Despedida */
+.closing-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #6495ED;
+}
+
+.closing-sub {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
